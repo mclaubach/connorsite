@@ -1,3 +1,4 @@
+<div id="wrapper">
 <div class="col-lg-12">
 <%- model_class = Work -%>
 <div class="page-header">
@@ -11,7 +12,7 @@
   <dd><%= @work.date_of %></dd>
   <dt><strong><%= model_class.human_attribute_name(:notes) %>:</strong></dt>
   <dd><%= @work.notes %></dd>
-  <dd id="fuckkk"><%= image_tag @work.artpic.url(:original) %></dd>
+  <dd id="fuckkk"><%= link_to(image_tag @work.artpic.url(:original)),  %></dd>
 </dl>
 
 <% if admin_signed_in? %>
@@ -26,4 +27,5 @@
               :class => 'btn btn-danger' %>
 <% else %>
 <% end %>
+</div>
 </div>
