@@ -4,14 +4,14 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
-<dl class="dl-horizontal">
+<dl class="dl-horizontal" style="float:left;">
   <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
   <dd><%= @work.title %></dd>
   <dt><strong><%= model_class.human_attribute_name(:date_of) %>:</strong></dt>
   <dd><%= @work.date_of %></dd>
   <dt><strong><%= model_class.human_attribute_name(:notes) %>:</strong></dt>
   <dd><%= @work.notes %></dd>
-  <dd id="art" style="width:90%;"><%= image_tag @work.artpic.url %></dd>
+  <dd id="art" style="width:75%;"><%= image_tag @work.artpic.url %></dd>
 </dl>
 
 <% if admin_signed_in? %>
