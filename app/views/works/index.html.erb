@@ -1,0 +1,118 @@
+<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                      <h3>Connor Sullivan</h3>
+                    </a>
+                </li>
+                <li>
+                  <h3>music</h3>
+                </li>
+                <li>
+                    <a href="http://islandhigh.bandcamp.com/" target="_blank">bandcamp</a>
+                </li>
+                <li>
+                    <a href="https://soundcloud.com/islandhigh" target="_blank">soundcloud</a>
+                </li>
+                <li>
+                  <h3>about</h3>
+                </li>
+                <li>
+                    <p style="color:pink;">hi im connor i like pokemon and yugioh and digimon and monster hunter and magic the gathering and super smash bros and mario kart and street fighter for 3ds</p><p>gamertag: psilopcybinstuNNA</p>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+  <% if admin_signed_in? %>
+    <%= link_to('logout', destroy_admin_session_path, :method => :delete ) %>
+   <% else %>
+    <%= link_to('login', new_admin_session_path) %>
+  <% end %>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+   <div id="works" style="width:80%;">
+    <% @works.each do |work| %>
+        <div class="gotoclass" id="<%= work.title %> cool" style="float:left; width:250px;">
+      <tr>
+        <h4><%= work.title %></h4>
+        <%= link_to image_tag(work.artpic.url), work %><br>
+      </div>
+    <% end %>
+   </div>
+<br>
+<br>
+<div>
+  <% if admin_signed_in? %>
+   <%= link_to 'New Work', new_work_path %>
+<% else %>
+<% end %>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>
