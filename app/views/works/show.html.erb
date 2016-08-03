@@ -9,7 +9,7 @@
   <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
   <dd><%= @work.title %></dd>
   <dt><strong><%= model_class.human_attribute_name(:date_of) %>:</strong></dt>
-  <dd><%= @work.date_of %></dd>
+  <dd><%= @work.date_ofstrftime("%Y") %></dd>
   <dt><strong><%= model_class.human_attribute_name(:notes) %>:</strong></dt>
   <dd><%= @work.notes %></dd>
   <dd id="fuckkk"><%= image_tag @work.artpic.url(:original) %></dd>

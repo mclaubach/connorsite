@@ -77,14 +77,13 @@
    </div>
 <br>
 <br>
-<div>
-  <p style="color:white;">
-    <% if admin_signed_in? %>
-   <%= link_to 'New Work', new_work_path %>
-<% else %>
-    <% end %></p>
-                      </div>
                     </div>
+   <div>
+     <% if admin_signed_in? %>
+      <%= link_to 'New Work', new_work_path %>
+     <% else %>
+     <% end %>
+    </div>
                 </div>
             </div>
         </div>
