@@ -68,7 +68,7 @@
                     <div class="col-lg-12">
    <div id="works" style="width:80%;">
     <% @works.each do |work| %>
-        <div class="gotoclass" id="<%= work.title %> cool" style="float:left; width:250px;">
+        <div class="gotoclass" id="<%= work.title %> cool" style="float:left;">
       <tr>
         <h4><%= work.title %></h4>
         <%= link_to image_tag(work.artpic.url), work %><br>
